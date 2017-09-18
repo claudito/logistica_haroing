@@ -15,7 +15,7 @@ define("FOLDER_FIRMA",RUTA."docs/pdf/img/firma/");#Ruta de Firmas de Usuarios
 #Datos de Conexión a Base de Datos
 define("SERVER","localhost");
 define("USER", "root");
-define("PASS", "userperutecbd");
+define("PASS", "userperutecdb");
 #define("PASS", "perutec");
 define("BD", "haroing_db");
 
