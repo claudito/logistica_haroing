@@ -1,4 +1,4 @@
-var path  = "http://192.168.1.15/dev/haroing/";
+var path  = "http://compras.perutec.com.pe";
 
 
 function logout(){
