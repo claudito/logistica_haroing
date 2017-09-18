@@ -2,7 +2,10 @@
 <IfModule mod_rewrite.c>
 # Activar RewriteEngine
 RewriteEngine on
-RewriteBase /dev/haroing/
+#Path Local:
+#RewriteBase /dev/haroing/
+#Path Remoto:
+RewriteBase /
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
  

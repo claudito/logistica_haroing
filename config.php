@@ -3,8 +3,8 @@
 date_default_timezone_set('America/Lima');
 
 #Path o URL de Proyecto
-define("PATH", "http://".$_SERVER['SERVER_NAME'].DIRECTORY_SEPARATOR.substr(dirname(__FILE__).DIRECTORY_SEPARATOR,strlen($_SERVER['DOCUMENT_ROOT'])));
-//define("PATH","http://192.168.1.15/dev/haroing/");
+#define("PATH", "http://".$_SERVER['SERVER_NAME'].DIRECTORY_SEPARATOR.substr(dirname(__FILE__).DIRECTORY_SEPARATOR,strlen($_SERVER['DOCUMENT_ROOT'])));
+define("PATH","http://compras.perutec.com.pe/");
 
 #Rutas y Carpetas
 define("RUTA", dirname(__FILE__).DIRECTORY_SEPARATOR);#Ruta del proyecto
@@ -15,7 +15,8 @@ define("FOLDER_FIRMA",RUTA."docs/pdf/img/firma/");#Ruta de Firmas de Usuarios
 #Datos de Conexión a Base de Datos
 define("SERVER","localhost");
 define("USER", "root");
-define("PASS", "perutec");
+define("PASS", "userperutecbd");
+#define("PASS", "perutec");
 define("BD", "haroing_db");
 
 #Configuración del Sistema
