@@ -1,4 +1,4 @@
-var path  = "http://compras.perutec.com.pe";
+var path  = "http://compras.perutec.com.pe/";
 
 
 function logout(){
