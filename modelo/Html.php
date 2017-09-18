@@ -26,6 +26,7 @@ class html
     <br></br>
 	<p class="text-center">&copy; '.date('Y').' PeruTec</p>
 	</div>
+	<script src="'.PATH.'ajax/logout.js"></script>
 	</body>
 	</html>';
 

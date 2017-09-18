@@ -1,2 +1,2 @@
-# Login PHP - MYSQL - AJAX
+# Logistica:Compras e Inventarios
 
