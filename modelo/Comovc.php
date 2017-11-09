@@ -239,15 +239,17 @@ public function consulta($id,$campo,$tipo)
         
     $modelo    = new Conexion();
     $conexion  = $modelo->get_conexion();
-    $query     = "SELECT s.id,s.requerimiento,s.numero, concat(u.nombres, ' ',u.apellidos) as usuario, p.id as idproveedor,p.ruc,p.direccion1,p.telefono,p.contacto,p.correo,p.razon_social as proveedor, s.fecha_inicio, s.fecha_fin, s.comentario,
- c.id as idcentro_costo,c.codigo as codigo_centrocosto, c.descripcion as centro_costo, of.id as id_ot, of.codigo as codigo_ot, of.codigo_cliente as cliente_ot,a.codigo as areacodigo,a.id as idarea, a.descripcion as area, s.tipo, s.estado, s.prioridad,s.cotizacion,s.condiciones_pago,s.lugar_entrega,s.modo_entrega
-from comovc as s
-left join usuario as u on s.id_usuario = u.id
-left join centro_costo as c on s.centro_costo = c.codigo
-left join area as a on s.area = a.codigo
-left join proveedor as p on s.id_proveedor = p.id 
-left join ord_fab as of on s.ot = of.codigo
-WHERE s.numero=:id AND s.tipo=:tipo";
+    $query     = "SELECT c.id,c.requerimiento,c.numero, concat(u.nombres, ' ',u.apellidos) as usuario, p.id as idproveedor, p.contacto as proveedor,p.razon_social,p.ruc, 
+c.fecha_inicio, c.fecha_fin, c.comentario,
+ c.id as idcentro_costo,cc.codigo as codigo_centrocosto, cc.descripcion as centro_costo, of.id as id_ot, of.codigo as codigo_ot,
+ of.codigo_cliente as cliente_ot ,a.codigo as areacodigo,a.id as idarea, a.descripcion as area, c.tipo, c.estado, c.prioridad
+from comovc as c
+left join usuario as u on c.id_usuario = u.id
+left join centro_costo as cc on c.centro_costo = cc.codigo
+left join area as a on c.area = a.codigo
+left join proveedor as p on c.id_proveedor = p.id 
+left join ord_fab as of on c.ot = of.codigo
+WHERE c.numero=:id AND c.tipo=:tipo";
     $statement = $conexion->prepare($query);
     $statement->bindParam(':id',$id);
     $statement->bindParam(':tipo',$tipo);

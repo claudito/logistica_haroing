@@ -3,13 +3,14 @@
 include'../../autoload.php';
 include'../../session.php';
 
-$idcodigo       =  $funciones->validar_xss($_POST['codigo']);
+
 $articulo       =  new Articulo();
 $requisc        =  new Requisc();
 $funciones      =  new Funciones();
 $message        =  new Message();
 
 $numero         = $funciones->validar_xss($_POST['idnumero']);
+$idcodigo       =  $funciones->validar_xss($_POST['codigo']);
 $item           = 0;
 $codigo         = $articulo->consulta($idcodigo,'codigo');
 $descripcion    = $articulo->consulta($idcodigo,'descripcion');

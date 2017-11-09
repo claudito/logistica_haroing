@@ -32,7 +32,7 @@ include'../vista/modal/'.$carpeta.'/eliminar.php';
 <div class="col-md-12">
 
 <div class="pull-right">
-<a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i>  Agregar</a>
+<a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i>  Crear</a>
 </div>
 
 

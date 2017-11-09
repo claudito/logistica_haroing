@@ -11,10 +11,22 @@ $carpeta  =  "rq-detalle";
 
 <form id="actualizar" autocomplete="off">
  	
-<div class="form-group">
-<label>CÓDIGO</label>
-<input type="text" name="codigo" class="form-control" value="<?php echo $requisd->consulta($id,'codigo_articulo').' - '.$requisd->consulta($id,'descripcion_articulo'); ?>" readonly>
+<div class="row">
+<div class="col-md-4">
+ <div class="form-group">
+<input type="text" name="codigo" class="form-control" value="<?php echo $requisd->consulta($id,'codigo_articulo'); ?>" readonly>
 </div>
+ 
+</div>
+<div class="col-md-8">
+ <div class="form-group">
+<input type="text" class="form-control" value="<?php echo $requisd->consulta($id,'descripcion_articulo'); ?>" readonly>
+</div>
+ 
+</div>
+</div>
+
+
 
 
 <div class="form-group">
@@ -45,7 +57,7 @@ foreach ($centro_costo->lista() as $key => $value): ?>
 <div class="col-md-6">
  <div class="form-group">
 <label>ORDEN DE TRABAJO</label>
-<select name="ot" id="" class="form-control" required="">
+<select name="ot" id="" class="form-control">
 <option value="<?php echo $requisd->consulta($id,'codigo_ot','RQ') ?>"><?php echo $requisd->consulta($id,'codigo_ot','RQ'); ?></option>
 <?php 
 $orden_trabajo = new Orden_trabajo();
@@ -61,7 +73,7 @@ foreach ($orden_trabajo->lista() as $key => $value): ?>
 
 <div class="form-group">
 <label>COMENTARIO</label>
-<input type="text" name="comentario" id="" class="form-control" required=""  onchange="Mayusculas(this)"  value="<?php echo $requisd->consulta($id,'comentario'); ?>">
+<textarea name="comentario"  rows="4" class="form-control" required=""><?php echo $requisd->consulta($id,'comentario'); ?></textarea>
 </div>
 
 

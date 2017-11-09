@@ -122,7 +122,7 @@ $folder   =  "usuario";
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Permisos SubMenú</h4>
+          <h4 class="modal-title">Habilitar Permisos de Usuario<i class="glyphicon glyphicon-user"></i></h4>
         </div>
         <div class="modal-body">
         <div id="form-permisos"></div>

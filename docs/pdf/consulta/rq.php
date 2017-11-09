@@ -19,7 +19,7 @@ $firma_3 = (!empty($firma_3)) ? $firma_3 : 0 ;
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Requerimiento de Compra <?php echo $_GET['id']; ?></title>
+	<title>Requerimiento de Compra <?php echo str_pad($_GET['id'],10,'0',STR_PAD_LEFT) ?></title>
 <link rel="stylesheet" href="<?php echo PATH; ?>assets/css/estilos-rq.css">
 
 </head>
@@ -29,7 +29,7 @@ $firma_3 = (!empty($firma_3)) ? $firma_3 : 0 ;
 <img src="../img/logo-pdf.jpg" alt="" width="300">
 </div>
 
-<h2 class="center">REQUERIMIENTO DE COMPRA N° <?php echo $_GET['id']; ?></h2>
+<h2 class="center">REQUERIMIENTO DE COMPRA N° <?php echo str_pad($_GET['id'],10,'0',STR_PAD_LEFT) ?></h2>
 
 <table  class="cabecera">
 <tr>

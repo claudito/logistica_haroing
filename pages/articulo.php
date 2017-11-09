@@ -8,7 +8,7 @@ $assets   ->sweetalert();
 $assets   ->datatables();
 $html->header();
 $carpeta = "articulo";?>
-<style>table{font-size: 10px;}</style>
+<style>table{font-size: 12px;}</style>
 
 <?php
 include'../vista/modal/'.$carpeta.'/agregar.php';
@@ -30,7 +30,7 @@ include'../vista/modal/'.$carpeta.'/eliminar.php';
 <div class="col-md-12">
 
 <div class="pull-right">
-<a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i>  Agregar Registro</a>
+<a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i>  Agregar</a>
 </div>
 
 

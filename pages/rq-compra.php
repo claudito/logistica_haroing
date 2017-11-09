@@ -8,7 +8,7 @@ $assets   ->sweetalert();
 $assets   ->datatables();
 $html->header();
 $carpeta = "rq-compra";?>
-<style>table{font-size: 10px;}</style>
+<style>table{font-size: 11px;}</style>
 <?php
 include'../vista/modal/'.$carpeta.'/agregar.php';
 include'../vista/modal/'.$carpeta.'/eliminar.php';
@@ -24,7 +24,7 @@ include'../vista/modal/'.$carpeta.'/eliminar.php';
 <div class="row">
 <div class="col-md-12">
 <div class="pull-right">
-<a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i>  Crear Requerimiento de Compra</a>
+<a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i>  Crear</a>
 </div>
 
 

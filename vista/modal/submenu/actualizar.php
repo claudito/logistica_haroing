@@ -70,6 +70,7 @@ $carpeta  =  "submenu";
           $("body").removeAttr("style");
           $('.modal-backdrop').remove();
           loadTabla(1);
+          menu(1);
           }
       });
   });

@@ -22,7 +22,7 @@ include'../vista/modal/'.$carpeta.'/buscar.php';
 <div class="col-md-12">
 
 <div class="pull-right">
-<a data-toggle="modal" href="#modal-buscar" class="btn btn-primary"><i class="fa fa-search"></i>  Buscar Documentos</a>
+<a data-toggle="modal" href="#modal-buscar" class="btn btn-primary"><i class="fa fa-search"></i>  Buscar </a>
 </div>
 
 

@@ -13,7 +13,7 @@ if (isset($_POST['id']))
 if (strlen($id)>0) 
 {
 
-$objeto      =  new Movalmcab();
+$objeto      =  new Guia_salida();
 $valor       =  $objeto->eliminar($id);
 
 if($valor=='ok')

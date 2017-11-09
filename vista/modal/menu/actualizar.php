@@ -47,7 +47,7 @@ $carpeta  =  "menu";
           success: function(datos){
           $("#mensaje").html(datos);
          //$("#actualizar")[0].reset();  //resetear inputs
-          $('#editModal').modal('hide'); //ocultar modal
+          //$('#editModal').modal('hide'); //ocultar modal
           $('body').removeClass('modal-open');
           $("body").removeAttr("style");
           $('.modal-backdrop').remove();

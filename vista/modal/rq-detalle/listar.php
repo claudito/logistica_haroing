@@ -12,7 +12,7 @@ $folder  =  "rq-detalle";
   
 <!-- Botón Registrar -->
 <div class="pull-right">
-<a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar Registro</a>
+<a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar</a>
 </div>
 
 <?php endif ?>
@@ -39,7 +39,7 @@ $folder  =  "rq-detalle";
           <th>CENTRO DE COSTO</th>
           <th>ORDEN DE TRABAJO</th>
  					<th>COMENTARIO</th>
- 					<th>ACCCIONES</th>
+ 					<th>ACCIONES</th>
  				</tr>
  			</thead>
  			<tbody>
@@ -49,8 +49,8 @@ $folder  =  "rq-detalle";
 			<td><?php echo $value['codigo_articulo']; ?></td>
 			<td><?php echo $value['descripcion_articulo']; ?></td>
 			<td><?php echo $value['unidad']; ?></td>
-			<td><?php echo round($value['cantidad']); ?></td>
-			<td><?php echo round($value['saldo']); ?></td>
+			<td><?php echo round($value['cantidad'],2); ?></td>
+			<td><?php echo round($value['saldo'],2); ?></td>
 			<td><?php echo $value['centro_costo']; ?></td>
 			<td><?php echo $value['codigo_ot']; ?></td>
       <td><?php echo $value['comentario']; ?></td>
@@ -90,5 +90,12 @@ $folder  =  "rq-detalle";
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal  Actualizar-->
  <?php else: ?>
- <p class="alert alert-warning">No hay registros Disponibles.</p>
+ <div class="panel panel-info">
+   <div class="panel-heading">
+     <h3 class="panel-title">DETALLE</h3>
+   </div>
+   <div class="panel-body">
+    <p class="alert alert-warning">No hay registros Disponibles.</p>
+   </div>
+ </div>
  <?php endif ?>

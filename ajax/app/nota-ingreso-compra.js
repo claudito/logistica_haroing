@@ -28,10 +28,8 @@ $.ajax({
     },
   success: function(datos){
   $("#mensaje").html(datos);//mostrar mensaje 
-  //$('#agregar').modal('hide'); // ocultar  formulario
-  $("#agregar")[0].reset();  //resetear inputs
-  $('#newModal').modal('hide');  // ocultar modal
-  loadTabla(1);
+  //$("#agregar")[0].reset();  //resetear inputs
+  //loadTabla(1);
   }
 });
 event.preventDefault();

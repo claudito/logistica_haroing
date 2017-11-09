@@ -43,9 +43,9 @@ $(document).ready(function(){
 			 {
 	
 			 $("#mensaje").html("<script>swal({type:'error',title:'Usuario o Contraseña Incorrectos',timer:2000,showConfirmButton: false})</script>");
-			 $('#correo').val("");
-			 $('#correo').focus();
 			 $('#pass').val("");
+			 $('#pass').focus();
+			 
        
 			}
 		   },

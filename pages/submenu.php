@@ -14,20 +14,17 @@ include'../vista/modal/'.$carpeta.'/eliminar.php';
 
  ?>
 
+<!-- Menú -->
 <div class="row">
 <div class="col-md-12">
-<?php include('../vista/nav.php'); ?>
+<div id="loader-menu"></div>
+<div id="tabla-menu"></div>
 </div>
 </div>
 
 
-
-
-
-
 <div class="row">
 <div class="col-md-12">
-
 <div class="pull-right">
 <a data-toggle="modal" href="#newModal" class="btn btn-primary"><i class="fa fa-plus"></i>  Agregar Registro</a>
 </div>
@@ -43,7 +40,8 @@ include'../vista/modal/'.$carpeta.'/eliminar.php';
 
 <script src="../ajax/app/<?php echo $carpeta; ?>.js"></script>
 <script> 
-loadTabla(1); 
+loadTabla(1);
+menu(1);
 </script>
 <?php $html -> footer(); ?>
 

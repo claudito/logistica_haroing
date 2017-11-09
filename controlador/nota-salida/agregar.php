@@ -1,6 +1,5 @@
 <?php 
 
-
 include'../../autoload.php';
 include'../../session.php';
 
@@ -8,30 +7,32 @@ $message   =  new Message();
 $funciones =  new Funciones();
 
 
-if (isset($_POST['id_usuario']) AND isset($_POST['id_proveedor']) AND isset($_POST['fecha_inicio']) AND isset($_POST['fecha_fin']) AND isset($_POST['comentario']) AND isset($_POST['centro_costo']) AND isset($_POST['ot']) AND isset($_POST['area']) AND isset($_POST['tipo']) AND isset($_POST['prioridad'])) 
+if (isset($_POST['alm']) AND isset($_POST['tipo_transaccion']) AND isset($_POST['tipo_documento']) AND isset($_POST['num_ref']) AND isset($_POST['usuario']) AND isset($_POST['proveedor']) AND isset($_POST['fecha_inicio']) AND isset($_POST['fecha_fin']) AND isset($_POST['comentario']) AND isset($_POST['codigo_cc']) AND isset($_POST['codigo_ot']) AND isset($_POST['area']) AND isset($_POST['tipo'])) 
 {
 
 
 	$correlativo = new Correlativo();
  
-	$numero      	=  $correlativo->correlativo('NS','numero')+1;
-	$id_usuario 	=  $funciones->validar_xss($_POST['id_usuario']);
-	$id_proveedor 	=  $funciones->validar_xss($_POST['id_proveedor']);
-	$fecha_inicio 	=  $funciones->validar_xss($_POST['fecha_inicio']);
-	$fecha_fin 		=  $funciones->validar_xss($_POST['fecha_fin']);
-	$comentario 	=  $funciones->validar_xss($_POST['comentario']);
-	$centro_costo 	=  $funciones->validar_xss($_POST['centro_costo']);
-	$ot 			=  $funciones->validar_xss($_POST['ot']);
-	$area 			=  $funciones->validar_xss($_POST['area']);
-	$tipo 			=  $funciones->validar_xss($_POST['tipo']);
-	$estado  		= '';
-	$prioridad 		=  $funciones->validar_xss($_POST['prioridad']);
+	$numero      		=  $correlativo->correlativo('NS','numero')+1;
+	$alm 				=  $funciones->validar_xss($_POST['alm']);
+	$tran 				=  $funciones->validar_xss($_POST['tipo_transaccion']);
+	$doc_ref 			=  $funciones->validar_xss($_POST['tipo_documento']);
+	$num_ref 			=  $funciones->validar_xss($_POST['num_ref']);
+	$id_usuario 		=  $funciones->validar_xss($_POST['usuario']);
+	$id_proveedor 		=  $funciones->validar_xss($_POST['proveedor']);
+	$fecha_inicio 		=  $funciones->validar_xss($_POST['fecha_inicio']);
+	$fecha_fin 			=  $funciones->validar_xss($_POST['fecha_fin']);
+	$comentario  		=  $funciones->validar_xss($_POST['comentario']);
+	$centro_costo 		=  $funciones->validar_xss($_POST['codigo_cc']);
+	$ot 				=  $funciones->validar_xss($_POST['codigo_ot']);
+	$area 				=  $funciones->validar_xss($_POST['area']);
+	$tipo 				=  $funciones->validar_xss($_POST['tipo']);
 
 
-if (strlen($id_usuario)>0 AND strlen($id_proveedor)>0 AND strlen($fecha_inicio)>0 AND strlen($fecha_fin)>0 AND strlen($comentario)>0 AND strlen($centro_costo)>0 AND strlen($ot)>0 AND strlen($area)>0 AND strlen($tipo)>0 AND strlen($prioridad)>0) 
+if (strlen($alm)>0 AND strlen($tran)>0 AND strlen($doc_ref)>0 AND strlen($num_ref)>0 AND strlen($id_usuario)>0 AND strlen($id_proveedor)>0 AND strlen($fecha_inicio)>0 AND strlen($fecha_fin)>0 AND strlen($comentario)>0 AND strlen($centro_costo)>0 AND strlen($ot)>0 AND strlen($area)>0 AND strlen($tipo)>0) 
 {
   
-$objeto      =  new Movalmcab($numero,$id_usuario,$id_proveedor,$fecha_inicio,$fecha_fin,$comentario,$centro_costo,$ot,$area,$tipo,$estado,$prioridad);
+$objeto      =  new Movalmcab_salida($numero,$alm,$tran,$doc_ref,$num_ref,$id_usuario,$id_proveedor,$fecha_inicio,$fecha_fin,$comentario,$centro_costo,$ot,$area,$tipo);
 $valor       =  $objeto->agregar();
 
 if ($valor=='existe') 

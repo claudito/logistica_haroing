@@ -36,11 +36,6 @@ $carpeta  =  "rq-compra";
 </div>
 </div>
 
-<div class="form-group">
-<label>COMENTARIO</label>
-<input type="text" name="comentario" id=""  required="" class="form-control" maxlength="100" 
- onchange="Mayusculas(this)" value="<?php echo $objeto->consulta($id,'comentario','RQ'); ?>">
-</div>
 
 <div class="row">
 <div class="col-md-6">
@@ -61,7 +56,7 @@ foreach ($centro_costo->lista() as $key => $value): ?>
 <div class="col-md-6">
 <div class="form-group">
 <label>ORDEN DE TRABAJO</label>
-<select name="ot" id="" class="form-control" required="">
+<select name="ot" id="" class="form-control">
 <option value="<?php echo $objeto->consulta($id,'codigo_ot','RQ') ?>"><?php echo $objeto->consulta($id,'codigo_ot','RQ'); ?></option>
 <?php 
 $orden_trabajo = new Orden_trabajo();
@@ -156,7 +151,11 @@ echo "no existe";
 <?php endif ?>
 </div>
 
+<div class="form-group">
+<label>COMENTARIO</label>
+<textarea name="comentario" id=""  rows="4" class="form-control" required=""><?php echo $objeto->consulta($id,'comentario','RQ'); ?></textarea>
 </div>
+
 
 <button class="btn btn-primary">Actualizar</button>
 

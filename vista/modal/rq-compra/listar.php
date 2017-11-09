@@ -20,7 +20,7 @@ $folder   =  "rq-compra";
 	<table  id="consulta" class="table table-bordered table-condensed">
 		<thead>
 			<tr class="info">
-				<th>#</th>
+				<th>NÚMERO</th>
 				<th>USUARIO</th>
 				<th>FECHA DE INICIO</th>
 				<th>FECHA DE FIN</th>
@@ -31,12 +31,13 @@ $folder   =  "rq-compra";
 				<th>ESTADO</th>
 				<th>PRIORIDAD</th>
 				<th>ACCIONES</th>
+
 			</tr>
 		</thead>
 		<tbody>
 		<?php foreach ($objeto->lista('RQ') as $key => $value): ?>
 		<tr>
-		<td><?php echo $value['numero']; ?>        </td>
+		<td><?php echo str_pad($value['numero'], 10,'0',STR_PAD_LEFT); ?> </td>
 		<td><?php echo $value['usuario']; ?> </td>
 		<td><?php echo $value['fecha_inicio']; ?> </td>
 		<td><?php echo $value['fecha_fin']; ?> </td>
@@ -64,10 +65,11 @@ $folder   =  "rq-compra";
 		}  ?> </td>
 		<td>
 		<a href="<?php echo PATH; ?>docs/pdf/reporte/rq?id=<?php echo $value['numero']; ?>" class="btn btn-warning btn-xs" target="_blank"><i class="glyphicon glyphicon-print"></i></a>
-		<a href="rq-compra-detalle?codigo=<?php echo $value['numero'];?>" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-		 <a data-id="<?php echo $value['numero'];?>" id=""  class="btn btn-edit btn-xs btn-info"><i class="glyphicon glyphicon-refresh"></i></a>
+		<a href="rq-compra-detalle?codigo=<?php echo $value['numero'];?>" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-list"></i></a>
+		 <a data-id="<?php echo $value['numero'];?>" id=""  class="btn btn-edit btn-xs btn-info"><i class="glyphicon glyphicon-edit"></i></a>
 		<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#dataDelete" data-id="<?php echo $value['id']; ?>"><i class="glyphicon glyphicon-trash"></i></button>
 		</td>
+	
 		</tr>
 		<?php endforeach ?>
 		</tbody>
@@ -110,6 +112,13 @@ $folder   =  "rq-compra";
 	});
 </script>
  <?php else: ?>
- <p class="alert alert-warning">No existen Registros.</p>
+ <div class="panel panel-default">
+ 	<div class="panel-heading">
+ 		<h3 class="panel-title"><?php echo $titulo; ?></h3>
+ 	</div>
+ 	<div class="panel-body">
+ 	<p class="alert alert-warning">No existen Registros.</p>
+ 	</div>
+ </div>
  <?php endif ?>
 

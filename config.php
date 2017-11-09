@@ -2,9 +2,11 @@
 #Zona Horaria
 date_default_timezone_set('America/Lima');
 
-#Path o URL de Proyecto
-#define("PATH", "http://".$_SERVER['SERVER_NAME'].DIRECTORY_SEPARATOR.substr(dirname(__FILE__).DIRECTORY_SEPARATOR,strlen($_SERVER['DOCUMENT_ROOT'])));
-define("PATH","http://compras.perutec.com.pe/");
+#Path Local
+define("PATH","http://192.168.1.15/dev/haroing/");
+
+#Path Remoto
+#efine("PATH","http://logistica.perutec.com.pe/");
 
 #Rutas y Carpetas
 define("RUTA", dirname(__FILE__).DIRECTORY_SEPARATOR);#Ruta del proyecto
@@ -15,9 +17,10 @@ define("FOLDER_FIRMA",RUTA."docs/pdf/img/firma/");#Ruta de Firmas de Usuarios
 #Datos de Conexión a Base de Datos
 define("SERVER","localhost");
 define("USER", "root");
-define("PASS", "userperutecdb");
-#define("PASS", "perutec");
+#define("PASS", "userperutecdb");
+define("PASS", "perutec");
 define("BD", "haroing_db");
+#define("BD", "haroing_db");
 
 #Configuración del Sistema
 define("FECHA",'Y-m-d');#Formato de Fecha
@@ -33,7 +36,8 @@ define("TIPO", "TIPO");
 define("ALM", "01");
 
 #Configuración de Etiquetas Proyectos
-define("TITULO_HOME", "App Logística - Versión 1.0");
+define("TITULO_HOME", "Aplicación Logística");
+define("VERSION", "Versión 1.0");
 define("DESC_HOME", "Gestión de Compras e Inventarios");
-
+define("NAME_PROJECT", "Gestión Logística");
  ?>

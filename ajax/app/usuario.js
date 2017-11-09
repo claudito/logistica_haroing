@@ -16,6 +16,26 @@ function loadTabla(page){
     })
   }
 
+function menu(page)
+{
+  var parametros = {"action":"ajax","page":page};
+    $("#loader-menu").fadeIn('slow');
+    $.ajax({
+      url:'../vista/nav-ajax.php',
+      data: parametros,
+       beforeSend: function(objeto){
+      //$("#loader").html("<img src='../assets/img/loader.gif'>");
+      },
+      success:function(data){
+        $("#tabla-menu").html(data).fadeIn('slow');
+        $("#loader-menu").html("");
+      }
+    })
+
+}
+
+  
+
 
 $( "#agregar" ).submit(function( event ) {
 var parametros = $(this).serialize();
@@ -32,6 +52,7 @@ $.ajax({
   $("#agregar")[0].reset();  //resetear inputs
   $('#newModal').modal('hide');  // ocultar modal
   loadTabla(1);
+  menu(1);
   }
 });
 event.preventDefault();
@@ -62,6 +83,7 @@ $( "#eliminarDatos" ).submit(function( event ) {
           $("#mensaje").html(datos);
           $('#dataDelete').modal('hide');
           loadTabla(1);
+          menu(1);
           }
       });
       event.preventDefault();

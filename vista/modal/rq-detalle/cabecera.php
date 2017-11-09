@@ -34,7 +34,7 @@ $requisc =  new Requisc();
 				</thead>
 				<tbody>
 				<tr>
-				<td><?php echo $requisc->consulta($numero,'numero','RQ'); ?></td>
+				<td><?php echo str_pad($requisc->consulta($numero,'numero','RQ'),10,'0',STR_PAD_LEFT); ?></td>
 				<td><?php echo $requisc->consulta($numero,'usuario','RQ'); ?></td>
 				<td><?php echo date_format(date_create($requisc->consulta($numero,'fecha_inicio','RQ')),'d/m/Y'); ?></td>
 				<td><?php echo date_format(date_create($requisc->consulta($numero,'fecha_fin','RQ')),'d/m/Y'); ?></td>

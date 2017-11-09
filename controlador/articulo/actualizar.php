@@ -6,7 +6,7 @@ include'../../session.php';
 $message     =  new Message();
 $funciones   =  new Funciones();
 
-if (isset($_POST['id']) AND isset($_POST['codigo']) AND isset($_POST['codigo2']) AND isset($_POST['descripcion']) AND isset($_POST['descripcion2']) AND isset($_POST['ficha']) AND isset($_POST['familia']) AND isset($_POST['unidad']) AND isset($_POST['tipo'])) 
+if (isset($_POST['id']) AND isset($_POST['codigo']) AND isset($_POST['codigo2']) AND isset($_POST['descripcion']) AND isset($_POST['descripcion2']) AND isset($_POST['ficha']) AND isset($_POST['familia']) AND isset($_POST['unidad']) AND isset($_POST['tipo']) AND isset($_POST['estado'])) 
 {
 
 	$id          	=  $funciones->validar_xss($_POST['id']);
@@ -18,11 +18,12 @@ if (isset($_POST['id']) AND isset($_POST['codigo']) AND isset($_POST['codigo2'])
 	$id_familia     =  $funciones->validar_xss($_POST['familia']);
 	$id_unidad     	=  $funciones->validar_xss($_POST['unidad']);
 	$id_tipo      	=  $funciones->validar_xss($_POST['tipo']);
+	$estado      	=  $funciones->validar_xss($_POST['estado']);
 
-if (strlen($id)>0 AND strlen($codigo)>0 AND strlen($codigo2)>0 AND strlen($descripcion)>0 AND strlen($descripcion2)>0 AND strlen($ficha)>0 AND strlen($id_familia)>0 AND strlen($id_unidad)>0 AND strlen($id_tipo)>0) 
+if (strlen($id)>0 AND strlen($codigo)>0 AND strlen($codigo2)>0 AND strlen($descripcion)>0 AND strlen($descripcion2)>0 AND strlen($ficha)>0 AND strlen($id_familia)>0 AND strlen($id_unidad)>0 AND strlen($id_tipo)>0 AND strlen($estado)>0) 
 
 {
-	$objeto      =  new Articulo($codigo,$codigo2,$descripcion,$descripcion2,$ficha,$id_familia,$id_unidad,$id_tipo);
+	$objeto      =  new Articulo($codigo,$codigo2,$descripcion,$descripcion2,$ficha,$id_familia,$id_unidad,$id_tipo,$estado);
 	$valor       =  $objeto->actualizar($id);
 
 if($valor=='ok')

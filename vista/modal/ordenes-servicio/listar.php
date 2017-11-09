@@ -163,6 +163,13 @@ $folder   =  "ordenes-servicio";
 	});
 </script>
  <?php else: ?>
- <p class="alert alert-warning">No existen Registros.</p>
+ <div class="panel panel-default">
+ 	<div class="panel-heading">
+ 		<h3 class="panel-title"><?php echo $titulo; ?></h3>
+ 	</div>
+ 	<div class="panel-body">
+ 		<p class="alert alert-warning">No existen Registros.</p>
+ 	</div>
+ </div>
  <?php endif ?>
 

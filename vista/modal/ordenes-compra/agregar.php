@@ -43,6 +43,20 @@ foreach ($proveedor->lista() as $key => $value): ?>
 <div class="row">
 <div class="col-md-6">
 <div class="form-group">
+<label>CENTRO DE COSTO</label>
+<select name="centro_costo" id="" class="form-control" required="">
+<option value="">[Seleccionar]</option>
+<?php 
+$centro_costo = new Centro_costo();
+foreach ($centro_costo->lista() as $key => $value): ?>
+<option value="<?php echo $value['codigo']?>"><?php echo $value['codigo'].'-'.$value['descripcion']?></option> 
+<?php endforeach ?>
+</select>
+</div>
+  
+</div>
+<div class="col-md-6">
+<div class="form-group">
 <label>ORDEN DE TRABAJO</label>
 <select name="ot" id="" class="form-control">
 <option value="">[Seleccionar]</option>
@@ -53,30 +67,8 @@ foreach ($orden_trabajo->lista() as $key => $value): ?>
 <?php endforeach ?>
 </select>
 </div>
-  
-</div>
-<div class="col-md-6">
-  <div class="form-group">
-<label>CENTRO DE COSTO</label>
-<select name="centro_costo" id="" class="form-control" required="">
-<option value="">[Seleccionar]</option>
-  <?php 
-  $centro_costo = new Centro_costo();
-  foreach ($centro_costo->lista() as $key => $value): ?>
-   <option value="<?php echo $value['codigo']?>"><?php echo $value['codigo'].'-'.$value['descripcion']?></option> 
-  <?php endforeach ?>
-</select>
 </div>
 </div>
-</div>
-
-<div class="form-group">
-<label>COMENTARIO</label>
-<input type="text" name="comentario" id=""  required="" class="form-control" maxlength="100" onchange="Mayusculas(this)" autocomplete="off">
-</div>
-
-
-
 
 
 <div class="form-group">
@@ -93,17 +85,20 @@ foreach ($orden_trabajo->lista() as $key => $value): ?>
 
 <div class="form-group">
 <label>PRIORIDAD</label><br>
- 
 <label class="radio-inline">
-  <input type="radio" name="prioridad" id="inlineRadio1" value="1"> BAJA
+  <input type="radio" name="prioridad"  value="1" required> BAJA
 </label>
 <label class="radio-inline">
-  <input type="radio" name="prioridad" id="inlineRadio2" value="2"> MEDIA
+  <input type="radio" name="prioridad"  value="2" required> MEDIA
 </label>
 <label class="radio-inline">
-  <input type="radio" name="prioridad" id="inlineRadio3" value="3"> ALTA
+  <input type="radio" name="prioridad"  value="3" required> ALTA
 </label> 
+</div>
 
+<div class="form-group">
+<label>COMENTARIO</label>
+<textarea name="comentario" id="" rows="4" onchange="Mayusculas(this)" required="" class="form-control"></textarea>
 </div>
 
   <button type="submit" class="btn btn-primary">Agregar</button>

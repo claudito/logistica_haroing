@@ -37,8 +37,8 @@ $folder   =  "ordenes-compra";
 		<tbody>
 		<?php foreach ($objeto->lista('OC') as $key => $value): ?>
 		<tr>
-		<td><?php echo $value['numero']; ?></td>
-		<td><?php echo ($value['requerimiento']==0) ? "" :  $value['requerimiento']; ?></td>
+		<td><?php echo str_pad($value['numero'], 10,'0',STR_PAD_LEFT); ?> </td>
+		<td><?php echo ($value['requerimiento']==0) ? "" :  str_pad($value['requerimiento'], 10,'0',STR_PAD_LEFT); ?></td>
 		<td><?php echo $value['usuario']; ?></td>
 		<td><?php echo $value['proveedor']; ?></td>
 		<td><?php echo date_format(date_create($value['fecha_inicio']),'d/m/Y'); ?></td>
@@ -95,7 +95,7 @@ $folder   =  "ordenes-compra";
 		<td style="text-align: center;">
 		 <a href="<?php echo PATH; ?>docs/pdf/reporte/oc?id=<?php echo $value['numero']; ?>" class="btn btn-warning btn-xs" target="_blank"><i class="glyphicon glyphicon-print"></i></a>
 
-		 <a data-id="<?php echo $value['numero'];?>" id=""  class="btn btn-rq btn-xs btn-primary">Req</a>
+		 <a data-id="<?php echo $value['numero'];?>" id=""  class="btn btn-rq btn-xs btn-primary"><i class="glyphicon glyphicon-list"></i></a>
 
 		 <a data-id="<?php echo $value['numero'];?>" id=""  class="btn btn-edit btn-xs btn-info"><i class="glyphicon glyphicon-edit"></i></a>
 		<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#dataDelete" data-id="<?php echo $value['id']; ?>"><i class="glyphicon glyphicon-trash"></i></button>
@@ -121,18 +121,16 @@ $folder   =  "ordenes-compra";
   		$('#modal-visualizar').modal('show');
   	});
   </script>
-  <div class="modal fade" id="modal-visualizar" tabindex="-1" role="dialog" aria-labelledby="requestModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-       <div id="form-rq"></div>
+<div class="modal fade" id="modal-visualizar" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div id="form-rq"></div>
+</div>
+</div>
+</div>
+<!-- Fin Modal  Visualizar-->
 
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal  Visualizar-->
-
-
-
-  <!-- Modal  Actualizar-->
+ <!-- /.modal  Actualizar-->
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
@@ -153,9 +151,10 @@ $folder   =  "ordenes-compra";
         <div id="form-edit"></div>
         </div>
 
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal  Actualizar-->
+      </div>
+    </div>
+  </div>
+  <!-- /.Fin Modal  Actualizar-->
 
 <script>
 	$(document).ready(function(){
@@ -163,6 +162,13 @@ $folder   =  "ordenes-compra";
 	});
 </script>
  <?php else: ?>
- <p class="alert alert-warning">No existen Registros.</p>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title"><?php echo $titulo; ?></h3>
+	</div>
+	<div class="panel-body">
+		 <p class="alert alert-warning">No existen Registros.</p>
+	</div>
+</div>
  <?php endif ?>
 

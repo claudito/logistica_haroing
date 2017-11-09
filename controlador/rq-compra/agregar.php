@@ -6,7 +6,7 @@ include'../../session.php';
 $message   =  new Message();
 $funciones =  new Funciones();
 
-if (isset($_POST['id_usuario']) AND isset($_POST['fecha_inicio']) AND isset($_POST['fecha_fin']) AND isset($_POST['comentario']) AND isset($_POST['centro_costo']) AND isset($_POST['ot']) AND isset($_POST['area']) AND isset($_POST['tipo']) AND isset($_POST['prioridad'])) 
+if (isset($_POST['id_usuario']) AND isset($_POST['fecha_inicio']) AND isset($_POST['fecha_fin']) AND isset($_POST['comentario']) AND isset($_POST['centro_costo']) AND isset($_POST['area']) AND isset($_POST['tipo']) AND isset($_POST['prioridad'])) 
 {  
 
     $correlativo  =  new Correlativo();
@@ -22,7 +22,7 @@ if (isset($_POST['id_usuario']) AND isset($_POST['fecha_inicio']) AND isset($_PO
 	$tipo 			=  $funciones->validar_xss($_POST['tipo']);
 	$prioridad 		=  $funciones->validar_xss($_POST['prioridad']);
 
-if (strlen($id_usuario)>0 AND strlen($fecha_inicio)>0 AND strlen($fecha_fin)>0 AND strlen($comentario)>0 AND strlen($centro_costo)>0 AND strlen($ot)>0 AND strlen($area)>0 AND strlen($tipo)>0 AND strlen($prioridad)>0) 
+if (strlen($id_usuario)>0 AND strlen($fecha_inicio)>0 AND strlen($fecha_fin)>0 AND strlen($comentario)>0 AND strlen($centro_costo)>0 AND strlen($area)>0 AND strlen($tipo)>0 AND strlen($prioridad)>0) 
 {
   
 $objeto      =  new Requisc($numero,$id_usuario,$fecha_inicio,$fecha_fin,$comentario,$centro_costo,$ot,$area,$tipo,$estado,$prioridad);

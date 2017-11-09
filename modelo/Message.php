@@ -27,6 +27,21 @@ return  '<script>
 
 
 
+function send_url($url,$time)
+{
+
+echo '<script>
+function pageslocation(){
+  window.location="'.$url.'";
+}
+setTimeout(pageslocation,'.$time.'000);
+
+</script>';
+
+
+}
+
+
 
 }
 

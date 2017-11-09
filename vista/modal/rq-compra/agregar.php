@@ -30,10 +30,6 @@
 </div>
 
 
-  <div class="form-group">
-<label>COMENTARIO</label>
-<input type="text" name="comentario" id=""  required="" class="form-control" maxlength="100" onchange="Mayusculas(this)">
-</div>
 
 <div class="row">
 <div class="col-md-6">
@@ -81,16 +77,22 @@ foreach ($orden_trabajo->lista() as $key => $value): ?>
 <label>PRIORIDAD</label><br>
  
 <label class="radio-inline">
-  <input type="radio" name="prioridad" id="inlineRadio1" value="1"> BAJA
+  <input type="radio" name="prioridad"   value="1" required> BAJA
 </label>
 <label class="radio-inline">
-  <input type="radio" name="prioridad" id="inlineRadio2" value="2"> MEDIA
+  <input type="radio" name="prioridad"   value="2" required> MEDIA
 </label>
 <label class="radio-inline">
-  <input type="radio" name="prioridad" id="inlineRadio3" value="3"> ALTA
+  <input type="radio" name="prioridad"   value="3" required> ALTA
 </label>
  
 </div>
+
+<div class="form-group">
+<label>COMENTARIO</label>
+<textarea  name="comentario" class="form-control"   rows="4" onchange="Mayusculas(this)"></textarea>
+</div>
+
 
 
   <button type="submit" class="btn btn-primary">Agregar</button>

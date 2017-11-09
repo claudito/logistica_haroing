@@ -109,7 +109,7 @@ public function actualizar($id)
     $modelo    = new Conexion();
     $conexion  = $modelo->get_conexion();
      $query     = "UPDATE  articulo  SET codigo=:codigo,codigo2=:codigo2,descripcion=:descripcion,
-     descripcion2=:descripcion2,ficha=:ficha,id_familia=:id_familia,id_unidad=:id_unidad,id_tipo=:id_tipo 
+     descripcion2=:descripcion2,ficha=:ficha,id_familia=:id_familia,id_unidad=:id_unidad,id_tipo=:id_tipo,estado=:estado
      WHERE  id=:id";
     $statement = $conexion->prepare($query);
     $statement->bindParam(':codigo',$this->codigo);
@@ -120,6 +120,7 @@ public function actualizar($id)
     $statement->bindParam(':id_familia',$this->id_familia);
     $statement->bindParam(':id_unidad',$this->id_unidad);
     $statement->bindParam(':id_tipo',$this->id_tipo);
+    $statement->bindParam(':estado',$this->estado);
     $statement->bindParam(':id',$id);
     if(!$statement)
     {
@@ -167,6 +168,24 @@ INNER JOIN articulo_tipo as t ON a.id_tipo=t.id ORDER BY a.codigo";
 }
 
 
+function lista_ubicacion()
+{
+   
+    try {
+
+    $modelo    = new Conexion();
+    $conexion  = $modelo->get_conexion();
+    $query     = "SELECT * FROM articulo WHERE id_tipo=1";
+    $statement = $conexion->prepare($query); 
+    $statement->execute();
+    $result = $statement->fetchAll();
+    return $result;
+    } catch (Exception $e) {
+    echo "ERROR: " . $e->getMessage();
+    }
+
+
+}
 
 
 

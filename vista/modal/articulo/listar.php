@@ -10,7 +10,7 @@ $folder   =  "articulo";
  ?>
 
  <?php if ( count($objeto->lista()) > 0): ?>
-<div class="panel panel-default">
+<div class="panel panel-info">
 	<div class="panel-heading">
 		<h3 class="panel-title"><?php echo $titulo; ?></h3>
 	</div>
@@ -21,13 +21,9 @@ $folder   =  "articulo";
 		<thead>
 			<tr>
 				<th>CÓDIGO</th>
-				<th>CÓDIGO 2</th>
-				<th>DESCRIPCIÓN</th>
-				<th>DESCRIPCIÓN 2</th>
-				<th>FICHA</th>
-				<th>CÓDIGO DE FAMILIA</th>
-				<th>CÓDIGO DE UNIDAD</th>
-				<th>CÓDIGO DE TIPO DE ARTÍCULO</th>
+        <th>DESCRIPCIÓN</th>
+				<th>FAMILIA</th>
+				<th>UND</th>
 				<th>ESTADO</th>
 				<th style="text-align: center;">ACCIONES</th>
 			</tr>
@@ -36,13 +32,9 @@ $folder   =  "articulo";
 		<?php foreach ($objeto->lista() as $key => $value): ?>
 		<tr>
 		<td><?php echo $value['codigo']; ?>        </td>
-		<td><?php echo $value['codigo2']; ?> </td>
 		<td><?php echo $value['descripcion']; ?> </td>
-		<td><?php echo $value['descripcion2']; ?> </td>
-		<td><?php echo $value['ficha']; ?> </td>
 		<td><?php echo $value['familia']; ?> </td>
 		<td><?php echo $value['unidad']; ?> </td>
-		<td><?php echo $value['tipo']; ?> </td>
 		<td><?php echo ($value['estado']==1) ? "ACTIVO" : "INACTIVO" ; ?> </td>	
 		<td style="text-align: center;">
 		 <a data-id="<?php echo $value['id'];?>" id=""  class="btn btn-edit btn-xs btn-info"><i class="glyphicon glyphicon-edit"></i></a>

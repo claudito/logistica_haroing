@@ -18,23 +18,34 @@ echo '
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>'.$titulo.'</title>
+	<title>'.$titulo.' | '.NAME_PROJECT.'</title>
 <!-- metas -->
 <meta http-equiv="refresh" content="1200">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="shortcut icon" type="image/x-icon" href="https://cdn0.iconfinder.com/data/icons/Hosting_Icons/128/secure-server-px-png.png">
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<style>
-body{
-font-family: "Montserrat", sans-serif;
-font-size:12px;
-}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
+<!-- Css Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- JS Bootstrap-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Font Awesome-->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="'.PATH.'assets/img/icono.png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+<style>
+body
+{
+font-family:"Varela Round", sans-serif;
+}
 </style>
 <script>
 
@@ -54,7 +65,7 @@ function datatables()
 echo '<!-- Datatables -->
 <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
 
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="'.PATH.'assets/js/datatable-es.js"></script>
 
 <script type="text/javascript" src="http://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>';
 }

@@ -41,7 +41,7 @@ $firma_3 = (!empty($firma_3)) ? $firma_3 : 0 ;
 <table class="table-cabecera">
 <tr>
 <td class="name-documento">N° ORDEN DE COMPRA</td>
-<td class="name-documento"><?php echo $_GET['id']; ?></td>
+<td class="name-documento"><?php echo str_pad($_GET['id'],10,'0',STR_PAD_LEFT) ?></td>
 </tr>
 </table>
 
@@ -68,7 +68,7 @@ $firma_3 = (!empty($firma_3)) ? $firma_3 : 0 ;
 <td class="cabecera-td">CONTACTO</td>
 <td class="cabecera-td"><?php echo $comovc->consulta($_GET['id'],'contacto','OC'); ?></td>
 <td class="cabecera-td">REQUISCIÓN</td>
-<td class="cabecera-td"><?php echo $comovc->consulta($_GET['id'],'requerimiento','OC'); ?></td>
+<td class="cabecera-td"><?php echo str_pad($comovc->consulta($_GET['id'],'requerimiento','OC'),10,'0',STR_PAD_LEFT); ?></td>
 </tr>
 <tr>
 <td class="cabecera-td">EMAIL</td>

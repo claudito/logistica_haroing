@@ -22,11 +22,19 @@ echo  (isset($_GET['ok'])) ? $message->mensaje("Bienvenido","success",$_SESSION[
 <div class="col-md-12">
 <div class="jumbotron">
 	<div class="container">
-		<h1><?php echo TITULO_HOME; ?></h1>
+	<div class="row">
+	<div class="col-md-4">
+	<img src="assets/img/icono.png" alt="" width="400" class="img-responsive">	
+	</div>
+	<div class="col-md-8">
+
+		<h1><?php echo TITULO_HOME; ?> <small><?php echo VERSION; ?></small></h1>
 		<p><?php echo DESC_HOME; ?></p>
 		<p>
 			<a class="btn btn-primary btn-lg" data-toggle="modal" href="#modal-informacion"><i class="fa fa-search fa-1x"></i> Conoce más del Sistema.</a>
 		</p>
+	</div>
+	</div>
 	</div>
 </div>
 </div>

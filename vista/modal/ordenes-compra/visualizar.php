@@ -67,13 +67,13 @@ $comovd       =  new Comovd();
             $("#mensaje").html("Mensaje: Cargando...");
             },
           success: function(datos){
-          $("#mensaje").html(datos);
+         $("#mensaje").html(datos);
          //$("#actualizar")[0].reset();  //resetear inputs
-          //$('#modal-visualizar').modal('hide'); //ocultar modal
+          //$('#permisosModal').modal('hide'); //ocultar modal
           $('body').removeClass('modal-open');
           $("body").removeAttr("style");
-          $('.modal-backdrop').remove();
-          loadTabla(1);
+          //$('.modal-backdrop').remove();
+          //loadTabla(1);
           }
       });
   });
@@ -138,7 +138,7 @@ $comovd       =  new Comovd();
           success: function(datos){
           $("#mensaje").html(datos);
          //$("#actualizar")[0].reset();  //resetear inputs
-          $('#modal-visualizar').modal('hide'); //ocultar modal
+          //$('#modal-visualizar').modal('hide'); //ocultar modal
           $('body').removeClass('modal-open');
           $("body").removeAttr("style");
           $('.modal-backdrop').remove();
